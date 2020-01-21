@@ -22,10 +22,6 @@ namespace UrnaEletronica
       private void Form1_Load(object sender, EventArgs e)
       {
          
-
-         
-
-
       }
 
       private void btnUm_Click(object sender, EventArgs e)
