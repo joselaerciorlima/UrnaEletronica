@@ -1,6 +1,6 @@
 ﻿namespace UrnaEletronica
 {
-   partial class Form1
+   partial class frmUrna
    {
       /// <summary>
       /// Variável de designer necessária.
@@ -28,12 +28,13 @@
       /// </summary>
       private void InitializeComponent()
       {
-         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+         System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUrna));
          this.panel1 = new System.Windows.Forms.Panel();
          this.btnConfirma = new System.Windows.Forms.Button();
          this.btnSeis = new System.Windows.Forms.Button();
          this.btnZero = new System.Windows.Forms.Button();
          this.btnCinco = new System.Windows.Forms.Button();
+         this.btnFinalizar = new System.Windows.Forms.Button();
          this.btnCorrige = new System.Windows.Forms.Button();
          this.btnBranco = new System.Windows.Forms.Button();
          this.btnQuatro = new System.Windows.Forms.Button();
@@ -61,8 +62,6 @@
          this.lblNome = new System.Windows.Forms.Label();
          this.label12 = new System.Windows.Forms.Label();
          this.lblVoto = new System.Windows.Forms.Label();
-         this.txtNumeroQuatro = new System.Windows.Forms.TextBox();
-         this.txtNumeroTres = new System.Windows.Forms.TextBox();
          this.txtNumeroDois = new System.Windows.Forms.TextBox();
          this.txtNumeroUm = new System.Windows.Forms.TextBox();
          this.pcbCandidato = new System.Windows.Forms.PictureBox();
@@ -83,6 +82,7 @@
          this.panel1.Controls.Add(this.btnSeis);
          this.panel1.Controls.Add(this.btnZero);
          this.panel1.Controls.Add(this.btnCinco);
+         this.panel1.Controls.Add(this.btnFinalizar);
          this.panel1.Controls.Add(this.btnCorrige);
          this.panel1.Controls.Add(this.btnBranco);
          this.panel1.Controls.Add(this.btnQuatro);
@@ -92,7 +92,7 @@
          this.panel1.Controls.Add(this.btnDois);
          this.panel1.Controls.Add(this.btnSete);
          this.panel1.Controls.Add(this.btnUm);
-         this.panel1.Location = new System.Drawing.Point(748, 121);
+         this.panel1.Location = new System.Drawing.Point(748, 115);
          this.panel1.Name = "panel1";
          this.panel1.Size = new System.Drawing.Size(479, 491);
          this.panel1.TabIndex = 14;
@@ -104,12 +104,13 @@
          this.btnConfirma.FlatAppearance.BorderSize = 0;
          this.btnConfirma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnConfirma.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnConfirma.Location = new System.Drawing.Point(328, 351);
+         this.btnConfirma.Location = new System.Drawing.Point(328, 319);
          this.btnConfirma.Name = "btnConfirma";
-         this.btnConfirma.Size = new System.Drawing.Size(120, 104);
+         this.btnConfirma.Size = new System.Drawing.Size(120, 108);
          this.btnConfirma.TabIndex = 13;
          this.btnConfirma.Text = "CONFIRMA";
          this.btnConfirma.UseVisualStyleBackColor = false;
+         this.btnConfirma.Click += new System.EventHandler(this.btnConfirma_Click);
          // 
          // btnSeis
          // 
@@ -120,12 +121,13 @@
          this.btnSeis.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnSeis.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnSeis.ForeColor = System.Drawing.Color.White;
-         this.btnSeis.Location = new System.Drawing.Point(306, 124);
+         this.btnSeis.Location = new System.Drawing.Point(306, 102);
          this.btnSeis.Name = "btnSeis";
          this.btnSeis.Size = new System.Drawing.Size(107, 73);
          this.btnSeis.TabIndex = 14;
          this.btnSeis.Text = "6";
          this.btnSeis.UseVisualStyleBackColor = false;
+         this.btnSeis.Click += new System.EventHandler(this.btnSeis_Click);
          // 
          // btnZero
          // 
@@ -136,12 +138,13 @@
          this.btnZero.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnZero.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnZero.ForeColor = System.Drawing.Color.White;
-         this.btnZero.Location = new System.Drawing.Point(185, 290);
+         this.btnZero.Location = new System.Drawing.Point(185, 268);
          this.btnZero.Name = "btnZero";
          this.btnZero.Size = new System.Drawing.Size(107, 73);
          this.btnZero.TabIndex = 15;
          this.btnZero.Text = "0";
          this.btnZero.UseVisualStyleBackColor = false;
+         this.btnZero.Click += new System.EventHandler(this.btnZero_Click);
          // 
          // btnCinco
          // 
@@ -152,12 +155,29 @@
          this.btnCinco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnCinco.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnCinco.ForeColor = System.Drawing.Color.White;
-         this.btnCinco.Location = new System.Drawing.Point(185, 124);
+         this.btnCinco.Location = new System.Drawing.Point(185, 102);
          this.btnCinco.Name = "btnCinco";
          this.btnCinco.Size = new System.Drawing.Size(107, 73);
          this.btnCinco.TabIndex = 16;
          this.btnCinco.Text = "5";
          this.btnCinco.UseVisualStyleBackColor = false;
+         this.btnCinco.Click += new System.EventHandler(this.btnCinco_Click);
+         // 
+         // btnFinalizar
+         // 
+         this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+         this.btnFinalizar.Cursor = System.Windows.Forms.Cursors.Hand;
+         this.btnFinalizar.FlatAppearance.BorderSize = 0;
+         this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+         this.btnFinalizar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+         this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+         this.btnFinalizar.Location = new System.Drawing.Point(30, 433);
+         this.btnFinalizar.Name = "btnFinalizar";
+         this.btnFinalizar.Size = new System.Drawing.Size(418, 37);
+         this.btnFinalizar.TabIndex = 17;
+         this.btnFinalizar.Text = "FINALIZAR VOTAÇÃO";
+         this.btnFinalizar.UseVisualStyleBackColor = false;
+         this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
          // 
          // btnCorrige
          // 
@@ -166,9 +186,9 @@
          this.btnCorrige.FlatAppearance.BorderSize = 0;
          this.btnCorrige.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnCorrige.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnCorrige.Location = new System.Drawing.Point(179, 394);
+         this.btnCorrige.Location = new System.Drawing.Point(179, 362);
          this.btnCorrige.Name = "btnCorrige";
-         this.btnCorrige.Size = new System.Drawing.Size(125, 61);
+         this.btnCorrige.Size = new System.Drawing.Size(125, 65);
          this.btnCorrige.TabIndex = 17;
          this.btnCorrige.Text = "CORRIGE";
          this.btnCorrige.UseVisualStyleBackColor = false;
@@ -181,12 +201,13 @@
          this.btnBranco.FlatAppearance.BorderSize = 0;
          this.btnBranco.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnBranco.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.btnBranco.Location = new System.Drawing.Point(30, 394);
+         this.btnBranco.Location = new System.Drawing.Point(30, 362);
          this.btnBranco.Name = "btnBranco";
-         this.btnBranco.Size = new System.Drawing.Size(125, 61);
+         this.btnBranco.Size = new System.Drawing.Size(125, 65);
          this.btnBranco.TabIndex = 17;
          this.btnBranco.Text = "BRANCO";
          this.btnBranco.UseVisualStyleBackColor = false;
+         this.btnBranco.Click += new System.EventHandler(this.btnBranco_Click);
          // 
          // btnQuatro
          // 
@@ -197,12 +218,13 @@
          this.btnQuatro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnQuatro.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnQuatro.ForeColor = System.Drawing.Color.White;
-         this.btnQuatro.Location = new System.Drawing.Point(64, 124);
+         this.btnQuatro.Location = new System.Drawing.Point(64, 102);
          this.btnQuatro.Name = "btnQuatro";
          this.btnQuatro.Size = new System.Drawing.Size(107, 73);
          this.btnQuatro.TabIndex = 18;
          this.btnQuatro.Text = "4";
          this.btnQuatro.UseVisualStyleBackColor = false;
+         this.btnQuatro.Click += new System.EventHandler(this.btnQuatro_Click);
          // 
          // btnNove
          // 
@@ -213,12 +235,13 @@
          this.btnNove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnNove.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnNove.ForeColor = System.Drawing.Color.White;
-         this.btnNove.Location = new System.Drawing.Point(306, 207);
+         this.btnNove.Location = new System.Drawing.Point(306, 185);
          this.btnNove.Name = "btnNove";
          this.btnNove.Size = new System.Drawing.Size(107, 73);
          this.btnNove.TabIndex = 19;
          this.btnNove.Text = "9";
          this.btnNove.UseVisualStyleBackColor = false;
+         this.btnNove.Click += new System.EventHandler(this.btnNove_Click);
          // 
          // btnTres
          // 
@@ -229,12 +252,13 @@
          this.btnTres.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnTres.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnTres.ForeColor = System.Drawing.Color.White;
-         this.btnTres.Location = new System.Drawing.Point(306, 41);
+         this.btnTres.Location = new System.Drawing.Point(306, 19);
          this.btnTres.Name = "btnTres";
          this.btnTres.Size = new System.Drawing.Size(107, 73);
          this.btnTres.TabIndex = 20;
          this.btnTres.Text = "3";
          this.btnTres.UseVisualStyleBackColor = false;
+         this.btnTres.Click += new System.EventHandler(this.btnTres_Click);
          // 
          // btnOito
          // 
@@ -245,12 +269,13 @@
          this.btnOito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnOito.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnOito.ForeColor = System.Drawing.Color.White;
-         this.btnOito.Location = new System.Drawing.Point(185, 207);
+         this.btnOito.Location = new System.Drawing.Point(185, 185);
          this.btnOito.Name = "btnOito";
          this.btnOito.Size = new System.Drawing.Size(107, 73);
          this.btnOito.TabIndex = 21;
          this.btnOito.Text = "8";
          this.btnOito.UseVisualStyleBackColor = false;
+         this.btnOito.Click += new System.EventHandler(this.btnOito_Click);
          // 
          // btnDois
          // 
@@ -261,12 +286,13 @@
          this.btnDois.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnDois.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnDois.ForeColor = System.Drawing.Color.White;
-         this.btnDois.Location = new System.Drawing.Point(185, 41);
+         this.btnDois.Location = new System.Drawing.Point(185, 19);
          this.btnDois.Name = "btnDois";
          this.btnDois.Size = new System.Drawing.Size(107, 73);
          this.btnDois.TabIndex = 22;
          this.btnDois.Text = "2";
          this.btnDois.UseVisualStyleBackColor = false;
+         this.btnDois.Click += new System.EventHandler(this.btnDois_Click);
          // 
          // btnSete
          // 
@@ -277,12 +303,13 @@
          this.btnSete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnSete.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnSete.ForeColor = System.Drawing.Color.White;
-         this.btnSete.Location = new System.Drawing.Point(64, 207);
+         this.btnSete.Location = new System.Drawing.Point(64, 185);
          this.btnSete.Name = "btnSete";
          this.btnSete.Size = new System.Drawing.Size(107, 73);
          this.btnSete.TabIndex = 23;
          this.btnSete.Text = "7";
          this.btnSete.UseVisualStyleBackColor = false;
+         this.btnSete.Click += new System.EventHandler(this.btnSete_Click);
          // 
          // btnUm
          // 
@@ -293,7 +320,7 @@
          this.btnUm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
          this.btnUm.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.btnUm.ForeColor = System.Drawing.Color.White;
-         this.btnUm.Location = new System.Drawing.Point(64, 41);
+         this.btnUm.Location = new System.Drawing.Point(64, 19);
          this.btnUm.Name = "btnUm";
          this.btnUm.Size = new System.Drawing.Size(107, 73);
          this.btnUm.TabIndex = 24;
@@ -310,7 +337,7 @@
          this.panel2.Controls.Add(this.pictureBox2);
          this.panel2.Location = new System.Drawing.Point(748, 12);
          this.panel2.Name = "panel2";
-         this.panel2.Size = new System.Drawing.Size(478, 108);
+         this.panel2.Size = new System.Drawing.Size(478, 103);
          this.panel2.TabIndex = 15;
          // 
          // label2
@@ -338,7 +365,7 @@
          this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
          this.pictureBox2.Location = new System.Drawing.Point(18, 3);
          this.pictureBox2.Name = "pictureBox2";
-         this.pictureBox2.Size = new System.Drawing.Size(125, 102);
+         this.pictureBox2.Size = new System.Drawing.Size(109, 92);
          this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
          this.pictureBox2.TabIndex = 0;
          this.pictureBox2.TabStop = false;
@@ -348,16 +375,14 @@
          this.panel3.BackColor = System.Drawing.Color.LightGray;
          this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
          this.panel3.Controls.Add(this.pnlInfo);
-         this.panel3.Controls.Add(this.pnlAjuda);
          this.panel3.Controls.Add(this.lblPartido);
          this.panel3.Controls.Add(this.lblNome);
          this.panel3.Controls.Add(this.label12);
          this.panel3.Controls.Add(this.lblVoto);
-         this.panel3.Controls.Add(this.txtNumeroQuatro);
-         this.panel3.Controls.Add(this.txtNumeroTres);
          this.panel3.Controls.Add(this.txtNumeroDois);
          this.panel3.Controls.Add(this.txtNumeroUm);
          this.panel3.Controls.Add(this.pcbCandidato);
+         this.panel3.Controls.Add(this.pnlAjuda);
          this.panel3.Location = new System.Drawing.Point(32, 43);
          this.panel3.Name = "panel3";
          this.panel3.Size = new System.Drawing.Size(676, 539);
@@ -462,7 +487,6 @@
          this.lblPartido.Name = "lblPartido";
          this.lblPartido.Size = new System.Drawing.Size(215, 27);
          this.lblPartido.TabIndex = 16;
-         this.lblPartido.Text = "PEsp";
          this.lblPartido.Visible = false;
          // 
          // lblNome
@@ -470,9 +494,8 @@
          this.lblNome.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.lblNome.Location = new System.Drawing.Point(120, 265);
          this.lblNome.Name = "lblNome";
-         this.lblNome.Size = new System.Drawing.Size(549, 27);
+         this.lblNome.Size = new System.Drawing.Size(355, 27);
          this.lblNome.TabIndex = 16;
-         this.lblNome.Text = "Nome do Candidato Fulano de Tal";
          this.lblNome.Visible = false;
          // 
          // label12
@@ -481,48 +504,20 @@
          this.label12.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
          this.label12.Location = new System.Drawing.Point(124, 84);
          this.label12.Name = "label12";
-         this.label12.Size = new System.Drawing.Size(286, 40);
+         this.label12.Size = new System.Drawing.Size(179, 40);
          this.label12.TabIndex = 16;
-         this.label12.Text = "Deputado Federal";
+         this.label12.Text = "Presidente";
          // 
          // lblVoto
          // 
          this.lblVoto.AutoSize = true;
          this.lblVoto.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.lblVoto.Location = new System.Drawing.Point(3, 11);
+         this.lblVoto.Location = new System.Drawing.Point(4, 11);
          this.lblVoto.Name = "lblVoto";
          this.lblVoto.Size = new System.Drawing.Size(208, 29);
          this.lblVoto.TabIndex = 16;
          this.lblVoto.Text = "SEU VOTO PARA";
          this.lblVoto.Visible = false;
-         // 
-         // txtNumeroQuatro
-         // 
-         this.txtNumeroQuatro.BackColor = System.Drawing.Color.LightGray;
-         this.txtNumeroQuatro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.txtNumeroQuatro.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtNumeroQuatro.Location = new System.Drawing.Point(287, 162);
-         this.txtNumeroQuatro.MaxLength = 1;
-         this.txtNumeroQuatro.Name = "txtNumeroQuatro";
-         this.txtNumeroQuatro.ReadOnly = true;
-         this.txtNumeroQuatro.Size = new System.Drawing.Size(48, 63);
-         this.txtNumeroQuatro.TabIndex = 15;
-         this.txtNumeroQuatro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-         this.txtNumeroQuatro.WordWrap = false;
-         // 
-         // txtNumeroTres
-         // 
-         this.txtNumeroTres.BackColor = System.Drawing.Color.LightGray;
-         this.txtNumeroTres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.txtNumeroTres.Font = new System.Drawing.Font("Arial", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-         this.txtNumeroTres.Location = new System.Drawing.Point(233, 162);
-         this.txtNumeroTres.MaxLength = 1;
-         this.txtNumeroTres.Name = "txtNumeroTres";
-         this.txtNumeroTres.ReadOnly = true;
-         this.txtNumeroTres.Size = new System.Drawing.Size(48, 63);
-         this.txtNumeroTres.TabIndex = 15;
-         this.txtNumeroTres.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-         this.txtNumeroTres.WordWrap = false;
          // 
          // txtNumeroDois
          // 
@@ -554,17 +549,17 @@
          // 
          // pcbCandidato
          // 
+         this.pcbCandidato.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
          this.pcbCandidato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-         this.pcbCandidato.Image = ((System.Drawing.Image)(resources.GetObject("pcbCandidato.Image")));
-         this.pcbCandidato.Location = new System.Drawing.Point(469, 3);
+         this.pcbCandidato.Location = new System.Drawing.Point(385, 3);
          this.pcbCandidato.Name = "pcbCandidato";
-         this.pcbCandidato.Size = new System.Drawing.Size(200, 200);
-         this.pcbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+         this.pcbCandidato.Size = new System.Drawing.Size(284, 244);
+         this.pcbCandidato.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
          this.pcbCandidato.TabIndex = 14;
          this.pcbCandidato.TabStop = false;
          this.pcbCandidato.Visible = false;
          // 
-         // Form1
+         // frmUrna
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
          this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -574,10 +569,9 @@
          this.Controls.Add(this.panel2);
          this.Controls.Add(this.panel1);
          this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-         this.Name = "Form1";
+         this.Name = "frmUrna";
          this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          this.Text = "Urna Eletrônica";
-         this.Load += new System.EventHandler(this.Form1_Load);
          this.panel1.ResumeLayout(false);
          this.panel2.ResumeLayout(false);
          this.panel2.PerformLayout();
@@ -624,13 +618,12 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblVoto;
         private System.Windows.Forms.TextBox txtNumeroUm;
-        private System.Windows.Forms.TextBox txtNumeroQuatro;
-        private System.Windows.Forms.TextBox txtNumeroTres;
         private System.Windows.Forms.TextBox txtNumeroDois;
         private System.Windows.Forms.Panel pnlInfo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }
 
